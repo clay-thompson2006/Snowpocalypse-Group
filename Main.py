@@ -38,7 +38,7 @@ sheet = workbook['Sheet']
 
 for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row, min_col=1, max_col=sheet.max_column):
     for cell in row:
-       info = cell.value
-
+        print(cell.value, end='\t')
+    print() 
 
 workbook.close()
