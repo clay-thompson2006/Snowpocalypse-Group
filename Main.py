@@ -3,7 +3,8 @@ from bs4 import BeautifulSoup
 import requests
 import openpyxl
 from openpyxl import load_workbook
-url = "https://weather.com/weather/tenday/l/Mahoning+Township+PA?canonicalCityId=1035939183d80a97a7b0ef4df08ca60d53c49d87aba371d0a87bb12576133236"
+
+url = "https://weather.com/weather/tenday/l/Canfield+OH+44406"
 
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
