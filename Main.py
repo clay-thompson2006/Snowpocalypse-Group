@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 import openpyxl
 from openpyxl import load_workbook
+from tkinter import *
 
 url = "https://weather.com/weather/tenday/l/Canfield+OH+44406"
 
@@ -37,9 +38,25 @@ workbook = openpyxl.load_workbook('snow_excel.xlsx')
 
 sheet = workbook['Sheet']  
 
+excel_data = []
+
 for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row, min_col=1, max_col=sheet.max_column):
+    row_data = []
     for cell in row:
-        print(cell.value, end='\t')
-    print() 
+        row_data.append(cell.value) 
+    excel_data.append(row_data)
 
 workbook.close()
+
+
+root = Tk()
+
+title = root.title("Weather thingy")
+
+scroll_bar = Scrollbar(root)
+
+scroll_bar.pack(side = RIGHT, fill = Y)
+
+scroll_bar.config( command = w)
+
+root.mainloop()
