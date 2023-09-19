@@ -1,0 +1,17 @@
+import openpyxl
+
+# Create a base map
+m = openpyxl.Map(location= ["latitude", "longitude" ]) (zoom_start=10)
+# Add a marker for a specific location
+openpyxl.Marker(
+    location=[41.0242, 80.6629],
+    popup='Current Weather: Sunny, 25°C',  # You would get this info from a weather API
+    icon=openpyxl.Icon(icon='cloud')  # You can customize the icon based on weather conditions
+).add_to(m)
+
+# Save the map to an HTML file
+m.save('https://www.weather-us.com/en/ohio-usa/boardman-long-term-weather-forecast')
+
+# Open the map in your web browser
+import webbrowser
+webbrowser.open('https://www.weather-us.com/en/ohio-usa/boardman-long-term-weather-forecast')
