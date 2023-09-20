@@ -51,12 +51,23 @@ workbook.close()
 
 root = Tk()
 
+root.geometry("700x350")
+
+scroll_bar = Scrollbar(root, orient='vertical')
+scroll_bar.pack(side=RIGHT, fill='y')
+
+my_list = Listbox(root)
+
 title = root.title("Weather thingy")
 
-scroll_bar = Scrollbar(root)
+my_list.config(yscrollcommand=scroll_bar.set)
 
-scroll_bar.pack(side = RIGHT, fill = Y)
+scroll_bar.config(command=my_list.yview)
 
-scroll_bar.config( command = w)
+for item in excel_data:
+    my_list.insert(END, item)
+
+my_list.pack(side=LEFT, fill=BOTH, expand=True)
+scroll_bar.pack(side=RIGHT, fill=Y)
 
 root.mainloop()
