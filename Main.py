@@ -1,3 +1,5 @@
+import Gmail
+import SMS
 import openpyxl
 from bs4 import BeautifulSoup
 import requests
@@ -71,3 +73,7 @@ my_list.pack(side=LEFT, fill=BOTH, expand=True)
 scroll_bar.pack(side=RIGHT, fill=Y)
 
 root.mainloop()
+
+if temperatures <= 10:
+    Gmail.Alert()
+    SMS.Alert()
