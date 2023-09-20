@@ -23,7 +23,7 @@ def Alert():
     server = smtplib.SMTP(smtp_server, smtp_port)
     server.starttls()  # Enable TLS encryption
 
-    email_password = "mcctc2023-2024"
+    email_password = "Arm70dust"
     server.login(sender_email, email_password)
 
     server.sendmail(sender_email, recipient_email, msg.as_string())
