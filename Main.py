@@ -1,5 +1,3 @@
-import Gmail
-import SMS
 import openpyxl
 from bs4 import BeautifulSoup
 import requests
@@ -60,7 +58,6 @@ while True:
         scroll_bar.pack(side=tk.RIGHT, fill=tk.Y)
         root.mainloop()
 
-    if temperatures <= 10:
-        Gmail.Alert()
-        SMS.Alert()
-    time.sleep(55)
+if temperatures <= 10:
+    Gmail.Alert()
+    SMS.Alert()
