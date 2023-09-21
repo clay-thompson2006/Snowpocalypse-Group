@@ -58,6 +58,7 @@ while True:
         scroll_bar.pack(side=tk.RIGHT, fill=tk.Y)
         root.mainloop()
 
-if temperatures <= 10:
-    Gmail.Alert()
-    SMS.Alert()
+    if temperatures <= 10:
+        Gmail.Alert()
+        SMS.Alert()
+    time.sleep(59)
