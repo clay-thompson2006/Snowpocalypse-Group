@@ -5,7 +5,8 @@ import openpyxl
 import tkinter as tk
 import time
 import datetime
-
+import Gmail
+import SMS
 while True:
     current_time = datetime.datetime.now
     if current_time.hour == 2 and current_time.minute == 30:
